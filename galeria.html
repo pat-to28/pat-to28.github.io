@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Galería</title>
+  <link rel="stylesheet" href="galeria.css" />
+</head>
+<body>
+  <header>
+    <h1>Fórmula 1</h1>
+    <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="escuderias.html">Escuderías</a></li>
+        <li><a href="neumaticos.html">Neumáticos</a></li>
+        <li><a href="circuitos.html">Circuitos</a></li>
+        <li><a href="carrera.html">Fin de semana</a></li>
+        <li><a href="terminos.html">Términos</a></li>
+        <li><a href="galeria.html" class="active">Galería</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="galeria" class="info-section fade-in">
+      <h2>Galería de Imágenes</h2>
+      <div class="imagenes">
+        <a href="img/1.jpg" class="lightbox"><img src="img/1.jpg" alt="F1 Car 1" /></a>
+        <a href="img/2.jpg" class="lightbox"><img src="img/2.jpg" alt="F1 Car 2" /></a>
+        <a href="img/3.jpg" class="lightbox"><img src="img/3.jpg" alt="F1 Car 3" /></a>
+        <a href="img/4.jpg" class="lightbox"><img src="img/4.jpg" alt="F1 Car 4" /></a>
+        <a href="img/5.jpg" class="lightbox"><img src="img/5.jpg" alt="F1 Car 5" /></a>
+        <a href="img/6.jpg" class="lightbox"><img src="img/6.jpg" alt="F1 Car 6" /></a>
+        <a href="img/7.jpg" class="lightbox"><img src="img/7.jpg" alt="F1 Car 7" /></a>
+        <a href="img/8.jpg" class="lightbox"><img src="img/8.jpg" alt="F1 Car 8" /></a>
+        <a href="img/9.jpg" class="lightbox"><img src="img/9.jpg" alt="F1 Car 9" /></a>
+        <a href="img/10.jpg" class="lightbox"><img src="img/10.jpg" alt="F1 Car 10" /></a>
+        <a href="img/11.jpg" class="lightbox"><img src="img/11.jpg" alt="F1 Car 11" /></a>
+        <a href="img/12.jpg" class="lightbox"><img src="img/12.jpg" alt="F1 Car 12" /></a>
+        <a href="img/13.jpg" class="lightbox"><img src="img/13.jpg" alt="F1 Car 13" /></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>2025 Fórmula 1</p>
+  </footer>
+
+  <div id="lightbox-container" class="hidden">
+    <span id="close-lightbox">&times;</span>
+    <img id="lightbox-image" src="" alt="Imagen ampliada" />
+  </div>
+
+  <script src="galeria.js"></script>
+
+  <script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  // Abre/cierra el menú
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el clic en el botón cierre el menú inmediatamente
+    navMenu.classList.toggle('open');
+  });
+
+  // Cierra el menú al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (
+      navMenu.classList.contains('open') &&
+      !navMenu.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
+      navMenu.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
+

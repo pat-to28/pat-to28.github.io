@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Términos Básicos</title>
+  <link rel="stylesheet" href="terminos.css" />
+</head>
+<body>
+  <header>
+    <h1>Fórmula 1</h1>
+    <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="escuderias.html">Escuderías</a></li>
+        <li><a href="neumaticos.html">Neumáticos</a></li>
+        <li><a href="circuitos.html">Circuitos</a></li>
+        <li><a href="carrera.html">Fin de semana</a></li>
+        <li><a href="terminos.html" class="active">Términos</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="terminos" class="info-section">
+      <h2>Términos Básicos</h2><br>
+      <p>Pole Position: Es la primera posición en la parrilla de salida. El piloto que logra el mejor tiempo en la clasificación se gana este lugar. Salir desde la pole te da una ventaja porque estás adelante de todos y podés evitar el caos que suele haber en las primeras curvas.</p> 
+      <p>Parrilla de salida (Grid): Es el orden en el que largan los autos el domingo, según los tiempos que hicieron en la clasificación. Se organiza en filas de a dos autos. </p> 
+      <p>Boxes (Pits): El lugar donde los autos entran durante la carrera para cambiar neumáticos, reparar algo o incluso abandonar si hay un problema serio. El equipo ahí es rapidísimo, pueden cambiar las cuatro ruedas en menos de 3 segundos. </p>
+      <p>Pit Stop: La parada en boxes. Estratégicamente clave: elegir el momento justo para parar puede hacerte ganar o perder posiciones. </p>
+      <p>Undercut: El undercut es cuando parás antes que tu rival y salís con neumáticos nuevos para ganar tiempo y superarlo cuando él pare. </p> 
+      <p>Overcut: El overcut es lo contrario: te quedás en pista más tiempo, confiando en que tus tiempos sean mejores que los del otro con neumáticos fríos o usados. </p> 
+      <p>DRS (Drag Reduction System): Un sistema que permite que el alerón trasero se abra en ciertas zonas del circuito, reduciendo la resistencia del aire y dándole al auto un extra de velocidad para facilitar los adelantamientos. Solo se puede usar si estás a menos de un segundo del auto que va adelante. </p> 
+      <p>Vuelta de formación: Es la vuelta que hacen antes de largar, para calentar neumáticos y frenos. Sirve también para chequear que todo esté bien con el auto. </p> 
+      <p>Safety Car: Cuando hay un accidente o algo peligroso en la pista, sale el auto de seguridad. Los pilotos deben ir detrás de él sin adelantarse, y la carrera se neutraliza. A veces esto cambia completamente el desarrollo de la carrera </p>
+      <p>Virtual Safety Car (VSC): Similar al Safety Car, pero virtual: todos deben reducir la velocidad a un ritmo específico sin que entre un auto real a pista. Es como una pausa parcial. </p> 
+      <p>Parc Fermé: Es cuando los autos están bajo "custodia" después de la clasificación. No se les puede hacer casi ningún cambio. Esto es para que no haya trampas entre la quali y la carrera </p> 
+      <p>Setup: Es cómo se configura el auto: suspensión, altura, alerones, etc. Cada pista necesita un setup distinto, y cada piloto tiene su estilo, así que ajustan el coche para que se sienta cómodo y rápido. </p>
+      <p>Tanda corta: pocas vueltas, con poco combustible y neumáticos nuevos, para buscar el mejor tiempo (como en clasificación). </p> 
+      <p>Tanda larga: muchas vueltas, simulando una carrera para ver cómo se comporta el auto con el paso del tiempo. </p> 
+      <p>Graining: cuando el caucho se desgasta de forma irregular y se forman como bolitas que hacen perder agarre. </p> 
+      <p>Blistering: cuando el neumático se recalienta y se forman burbujas que lo dañan. </p> 
+      <a href="img/box.jpg" class="lightbox">
+      <img src="img/box.jpg" alt="Términos F1" />
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>2025 Fórmula 1</p>
+  </footer>
+   
+  <div id="lightbox-container" class="hidden">
+  <span id="close-lightbox">&times;</span>
+  <img id="lightbox-image" src="" alt="Imagen ampliada" />
+</div>
+
+  <script src="galeria.js"></script>
+
+  <script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  // Abre/cierra el menú
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el clic en el botón cierre el menú inmediatamente
+    navMenu.classList.toggle('open');
+  });
+
+  // Cierra el menú al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (
+      navMenu.classList.contains('open') &&
+      !navMenu.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
+      navMenu.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
