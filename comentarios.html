@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comentarios</title>
+  <link rel="stylesheet" href="comentarios.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Fórmula 1</h1>
+    <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="escuderias.html">Escuderías</a></li>
+        <li><a href="neumaticos.html">Neumáticos</a></li>
+        <li><a href="circuitos.html">Circuitos</a></li>
+        <li><a href="carrera.html">Fin de semana</a></li>
+        <li><a href="terminos.html">Términos</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="comentarios.html" class="active">Comentarios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p>Me gustaría saber qué te parece esta página.</p>
+      <p>Si hay algo que crees que se puede mejorar, ¡tus ideas y sugerencias serán más que bien recibidas!</p>
+      <p>Gracias por tomarte un rato para ayudarme con esto.</p>
+    </section>
+
+    <section id="formulario-coment" class="info-section">
+      <h2>Envía tus comentarios</h2>
+      <form action="https://formsubmit.co/pat2to8@gmail.com" method="POST">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required/>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required/>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <input type="hidden" name="_subject" value="Nuevo comentario"/>
+        <input type="hidden" name="_next" value="https://pat-to28.github.io/comentarios.html"/>
+        <input type="hidden" name="_captcha" value="false"/>
+
+        <button type="submit">Enviar comentario</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>2025 Fórmula 1 <a href="#top" class="back">Volver arriba</a></p>
+  </footer>
+
+  <script src="menu.js"></script>
+</body>
+</html>
